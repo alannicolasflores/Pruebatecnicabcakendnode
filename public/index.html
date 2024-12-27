@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Usuarios</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="bg-primary text-white text-center py-3">
+    <h1>Gestión de Usuarios</h1>
+  </header>
+
+  <main class="container mt-5">
+    <!-- Menú Principal -->
+    <div id="menu" class="text-center">
+      <h2>Menú Principal</h2>
+      <button class="btn btn-primary w-100 mb-3" onclick="showSection('create')">Crear Usuario</button>
+      <button class="btn btn-secondary w-100" onclick="showSection('list')">Ver Usuarios</button>
+    </div>
+
+    <!-- Sección Crear Usuario -->
+    <div id="create" class="d-none">
+      <h2 class="text-center mb-4">Crear Usuario</h2>
+      <form id="userForm" class="shadow p-4 rounded bg-light">
+        <div class="mb-3">
+          <label for="nombre" class="form-label">Nombre</label>
+          <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre" required>
+        </div>
+        <div class="mb-3">
+          <label for="apellido" class="form-label">Apellido</label>
+          <input type="text" id="apellido" name="apellido" class="form-control" placeholder="Apellido" required>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" id="email" name="email" class="form-control" placeholder="Email" required>
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+        </div>
+        <div class="mb-3">
+          <label for="imagen_perfil" class="form-label">Imagen de Perfil</label>
+          <input type="file" id="imagen_perfil" name="imagen_perfil" class="form-control" accept="image/*">
+        </div>
+        <button type="submit" class="btn btn-success w-100">Guardar</button>
+      </form>
+      <button class="btn btn-secondary w-100 mt-3" onclick="showSection('menu')">Volver al Menú</button>
+    </div>
+
+    <!-- Sección Editar Usuario -->
+    <div id="edit" class="d-none">
+      <h2 class="text-center mb-4">Editar Usuario</h2>
+      <form id="editForm" class="shadow p-4 rounded bg-light">
+        <input type="hidden" id="editId" name="editId">
+        <div class="mb-3">
+          <label for="editNombre" class="form-label">Nombre</label>
+          <input type="text" id="editNombre" name="nombre" class="form-control" placeholder="Nombre" required>
+        </div>
+        <div class="mb-3">
+          <label for="editApellido" class="form-label">Apellido</label>
+          <input type="text" id="editApellido" name="apellido" class="form-control" placeholder="Apellido" required>
+        </div>
+        <div class="mb-3">
+          <label for="editEmail" class="form-label">Email</label>
+          <input type="email" id="editEmail" name="email" class="form-control" placeholder="Email" required>
+        </div>
+        <div class="mb-3">
+          <label for="editImagenPerfil" class="form-label">Imagen de Perfil</label>
+          <input type="file" id="editImagenPerfil" name="imagen_perfil" class="form-control" accept="image/*">
+        </div>
+        <button type="submit" class="btn btn-warning w-100">Actualizar</button>
+      </form>
+      <button class="btn btn-secondary w-100 mt-3" onclick="showSection('list')">Volver a Lista</button>
+    </div>
+
+    <!-- Sección Ver Usuarios -->
+    <div id="list" class="d-none">
+      <h2 class="text-center mb-4">Lista de Usuarios</h2>
+      <table class="table table-striped">
+        <thead class="table-dark">
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Email</th>
+            <th>Imagen</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="userTable">
+          <!-- Contenido dinámico -->
+        </tbody>
+      </table>
+      <button class="btn btn-secondary w-100 mt-3" onclick="showSection('menu')">Volver al Menú</button>
+    </div>
+  </main>
+
+  <footer class="bg-dark text-white text-center py-3 mt-5">
+    <p>
+      Desarrollado por <strong>Alan Nicolás Flores Melo</strong> - 
+      <a href="https://github.com/alannicolasflores" target="_blank" class="text-white" style="text-decoration: underline;">
+        GitHub
+      </a>
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

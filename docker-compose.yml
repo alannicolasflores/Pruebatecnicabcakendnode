@@ -3,10 +3,11 @@ services:
     image: mysql:5.7
     environment:
       MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: user_management # Crea automáticamente la base de datos si no existe
     ports:
-      - "3307:3306"
+      - "3307:3306" # Exponer el puerto 3306 dentro del contenedor al 3307 en el host
     volumes:
-      - db_data:/var/lib/mysql
+      - db_data:/var/lib/mysql # Volumen persistente para los datos de MySQL
 
   app:
     build:
