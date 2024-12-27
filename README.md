@@ -38,7 +38,7 @@ La prueba técnica se completó de manera satisfactoria. La aplicación cumple c
 
 ## Acceso
 
-- **URL de la aplicación:** [Inserta aquí la URL]
+- **URL de la aplicación:** http://74.235.241.31/
 
 ## Archivos importantes
 
